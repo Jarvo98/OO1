@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: ar.edu.info.oo1.ej3_presupuestos.ItemTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
+ar.edu.info.oo1.ej3_presupuestos.ItemTest.testCosto()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at ar.edu.info.oo1.ej3_presupuestos.ItemTest.testCosto(ItemTest.java:19)
+
+ar.edu.info.oo1.ej3_presupuestos.ItemTest.testCostoUnitario()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at ar.edu.info.oo1.ej3_presupuestos.ItemTest.testCostoUnitario(ItemTest.java:24)
+
