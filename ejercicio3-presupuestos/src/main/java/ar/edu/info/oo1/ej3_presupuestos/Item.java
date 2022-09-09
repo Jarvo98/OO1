@@ -5,16 +5,12 @@ public class Item {
     private int cantidad;
     private double costoUnitario;
 
-    public String getDetalle() {
-        return detalle;
-    }
-
     public Item detalle(String detalle) {
         this.detalle = detalle;
         return this;
     }
 
-    public int getCantidad() {
+    private int getCantidad() {
         return cantidad;
     }
 

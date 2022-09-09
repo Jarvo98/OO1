@@ -1,6 +1,6 @@
 package ar.edu.info.oo1.ej4_figuras;
 
-public class Cuadrado extends Figura {
+public class Cuadrado implements Figura {
 
     private double lado;
 

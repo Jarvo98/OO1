@@ -1,6 +1,6 @@
 package ar.edu.info.oo1.ej4_figuras;
 
-public class Circulo extends Figura {
+public class Circulo implements Figura {
 
     private double radio;
 
