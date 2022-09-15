@@ -1,0 +1,17 @@
+Gerente alan = new Gerente("Alan Turing");
+double aportesDeAlan = alan.aportes();
+
+Se ejecuta el metodo #aportes de la clase Gerente
+Se ejecuta el metodo #montoBasico de la clase Gerente
+El valor retornado es de 57000 * 0.05 = 2850
+
+Gerente alan = new Gerente("Alan Turing");
+double sueldoBasicoDeAlan = alan.sueldoBasico();
+
+Se ejecuta el metodo #sueldoBasico de la clase EmpleadoJerarquico
+Se ejecuta el metodo #sueldoBasico de la clase Empleado
+Se ejecuta el metodo #montoBasico de la clase Gerente
+Se ejecuta el metodo #aportes de la clase Gerente
+Se ejecuta el metodo #montoBasico de la clase Gerente
+Se ejecuta el metodo #bonoPorCategoria de clase EmpleadoJerarquico
+El valor retornado es de 67850
