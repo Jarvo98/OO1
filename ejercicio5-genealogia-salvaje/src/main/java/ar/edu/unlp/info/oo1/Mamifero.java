@@ -58,36 +58,28 @@ public class Mamifero {
         this.madre = madre;
     }
 
+    private boolean tengoPadre() {
+        return this.getPadre() != null;
+    }
+
+    private boolean tengoMadre() {
+        return this.getMadre() != null;
+    }
+
     public Mamifero getAbueloMaterno() {
-        if (this.getMadre() != null) {
-            return this.getMadre().getPadre();
-        } else {
-            return null;
-        }
+        return this.tengoMadre() ? this.getMadre().getPadre() : null;
     }
 
     public Mamifero getAbuelaMaterna() {
-        if (this.getMadre() != null) {
-            return this.getMadre().getMadre();
-        } else {
-            return null;
-        }
+        return this.tengoMadre() ? this.getMadre().getMadre() : null;
     }
 
     public Mamifero getAbueloPaterno() {
-        if (this.getPadre() != null) {
-            return this.getPadre().getPadre();
-        } else {
-            return null;
-        }
+        return this.tengoPadre() ? this.getPadre().getPadre() : null;
     }
 
     public Mamifero getAbuelaPaterna() {
-        if (this.getPadre() != null) {
-            return this.getPadre().getMadre();
-        } else {
-            return null;
-        }
+        return this.tengoPadre() ? this.getPadre().getMadre() : null;
     }
 
     public boolean tieneComoAncestroA(Mamifero unMamifero) {
@@ -98,9 +90,9 @@ public class Mamifero {
         return
                 (!esRaiz && this.equals(unMamifero))
                 ||
-                (this.getPadre() != null && this.getPadre().tieneComoAncestroA(unMamifero, false))
+                (this.tengoPadre() && this.getPadre().tieneComoAncestroA(unMamifero, false))
                 ||
-                (this.getMadre() != null && this.getMadre().tieneComoAncestroA(unMamifero, false));
+                (this.tengoMadre() && this.getMadre().tieneComoAncestroA(unMamifero, false));
     }
 
     public boolean equals(Mamifero unMamifero) {

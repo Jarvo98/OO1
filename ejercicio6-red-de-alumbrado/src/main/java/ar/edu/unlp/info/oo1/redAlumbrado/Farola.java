@@ -7,6 +7,11 @@ public class Farola {
     private boolean isTurnedOn;
     private Collection<Farola> neighbors;
 
+    private Farola setIsTurnedOn(boolean isTurnedOn) {
+        this.isTurnedOn = isTurnedOn;
+        return this;
+    }
+
     public Farola() {
         this.neighbors = new ArrayList<>();
     }
@@ -23,17 +28,17 @@ public class Farola {
     }
 
     public void turnOn() {
-        if (!this.isOn()) {
-            this.isTurnedOn = true;
-            this.neighbors.forEach(neighbor -> neighbor.turnOn());
-        }
+        if (!this.isOn())
+            this.setIsTurnedOn(true)
+                    .getNeighbors()
+                    .forEach(neighbor -> neighbor.turnOn());
     }
 
     public void turnOff() {
-        if (this.isOn()) {
-            this.isTurnedOn = false;
-            this.neighbors.forEach(neighbor -> neighbor.turnOff());
-        }
+        if (this.isOn())
+            this.setIsTurnedOn(false)
+                    .getNeighbors()
+                    .forEach(neighbor -> neighbor.turnOff());
     }
 
     public boolean isOn() {
