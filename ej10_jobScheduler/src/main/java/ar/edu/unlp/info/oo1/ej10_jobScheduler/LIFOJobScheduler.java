@@ -12,7 +12,11 @@ public class LIFOJobScheduler extends JobScheduler {
     }
 
     private JobDescription getLastJob() {
-        return this.getJobs().get(this.jobsCount() - 1);
+        try {
+            return this.getJobs().get(this.jobsCount() - 1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
     }
 
 }

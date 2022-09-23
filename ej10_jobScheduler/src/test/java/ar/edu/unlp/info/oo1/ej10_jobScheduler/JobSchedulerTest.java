@@ -29,19 +29,19 @@ public class JobSchedulerTest {
     	this.initializeJobs();
     } 
     
-    private JobScheduler newFifoScheduler() {
+    private FIFOJobScheduler newFifoScheduler() {
     	return new FIFOJobScheduler();
     }
     
-    private JobScheduler newLifoScheduler() {
+    private LIFOJobScheduler newLifoScheduler() {
     	return new LIFOJobScheduler();
     }
     
-    private JobScheduler newPriorityScheduler() {
+    private HighestPriorityJobScheduler newPriorityScheduler() {
     	return new HighestPriorityJobScheduler();
     }
     
-    private JobScheduler newEffortScheduler() {
+    private MostEffortJobScheduler newEffortScheduler() {
     	return new MostEffortJobScheduler();
     }
     
@@ -91,4 +91,17 @@ public class JobSchedulerTest {
     	assertEquals(scheduler.next(), mostEffortJob);
     	assertEquals(scheduler.jobsCount(), 3);
     }
+
+	@Test
+	void testNextWhenThereAreNoJobs() {
+		FIFOJobScheduler fifoJobScheduler = this.newFifoScheduler();
+		LIFOJobScheduler lifoJobScheduler = this.newLifoScheduler();
+		HighestPriorityJobScheduler highestPriorityJobScheduler = this.newPriorityScheduler();
+		MostEffortJobScheduler mostEffortJobScheduler = this.newEffortScheduler();
+
+		assertNull(fifoJobScheduler.next());
+		assertNull(lifoJobScheduler.next());
+		assertNull(highestPriorityJobScheduler.next());
+		assertNull(mostEffortJobScheduler.next());
+	}
 }

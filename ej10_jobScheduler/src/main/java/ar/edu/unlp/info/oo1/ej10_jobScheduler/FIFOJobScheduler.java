@@ -12,7 +12,7 @@ public class FIFOJobScheduler extends JobScheduler {
     }
 
     private JobDescription getFirstJob() {
-        return this.getJobs().get(0);
+        return this.getJobs().stream().findFirst().orElse(null);
     }
 
 }
