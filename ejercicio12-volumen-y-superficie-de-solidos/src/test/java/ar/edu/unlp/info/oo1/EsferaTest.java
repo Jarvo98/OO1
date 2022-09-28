@@ -22,4 +22,16 @@ public class EsferaTest {
     public void getSuperficieTest() {
         Assertions.assertEquals(12.57, this.esfera.getSuperficie(), 0.01);
     }
+
+    @Test
+    public void esDeEsteColorTest() {
+        Assertions.assertTrue(this.esfera.esDeEsteColor("Gris"));
+        Assertions.assertFalse(this.esfera.esDeEsteColor("Rojo"));
+    }
+
+    @Test
+    public void esDeEsteMaterialTest() {
+        Assertions.assertTrue(this.esfera.esDeEsteMaterial("Hierro"));
+        Assertions.assertFalse(this.esfera.esDeEsteColor("Bronce"));
+    }
 }

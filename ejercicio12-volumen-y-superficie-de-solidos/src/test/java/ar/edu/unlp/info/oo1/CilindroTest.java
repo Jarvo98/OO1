@@ -22,4 +22,16 @@ public class CilindroTest {
     public void getSuperficieTest() {
         Assertions.assertEquals(69.12, this.cilindro.getSuperficie(), 0.01);
     }
+
+    @Test
+    public void esDeEsteColorTest() {
+        Assertions.assertTrue(this.cilindro.esDeEsteColor("Gris"));
+        Assertions.assertFalse(this.cilindro.esDeEsteColor("Rojo"));
+    }
+
+    @Test
+    public void esDeEsteMaterialTest() {
+        Assertions.assertTrue(this.cilindro.esDeEsteMaterial("Hierro"));
+        Assertions.assertFalse(this.cilindro.esDeEsteColor("Bronce"));
+    }
 }

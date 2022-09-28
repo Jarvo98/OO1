@@ -22,4 +22,16 @@ public class PrismaRectangularTest {
     public void getSuperficieTest() {
         Assertions.assertEquals(46, this.prismaRectangular.getSuperficie());
     }
+
+    @Test
+    public void esDeEsteColorTest() {
+        Assertions.assertTrue(this.prismaRectangular.esDeEsteColor("Gris"));
+        Assertions.assertFalse(this.prismaRectangular.esDeEsteColor("Rojo"));
+    }
+
+    @Test
+    public void esDeEsteMaterialTest() {
+        Assertions.assertTrue(this.prismaRectangular.esDeEsteMaterial("Hierro"));
+        Assertions.assertFalse(this.prismaRectangular.esDeEsteColor("Bronce"));
+    }
 }

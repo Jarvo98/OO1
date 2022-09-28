@@ -37,11 +37,11 @@ public class ReporteDeConstruccionTest {
     }
 
     private void agregarPiezas() {
-        this.reporteDeConstruccion.agregarPieza(new Cilindro("Hierro", "Rojo", 10, 100)); // volumen: 31415.93
-        this.reporteDeConstruccion.agregarPieza(new Esfera("Hierro", "Rojo", 10)); // volumen: 4188.79
-        this.reporteDeConstruccion.agregarPieza(new PrismaRectangular("Hierro", "Rojo", 20, 10, 5)); // volumen: 1000
-        this.reporteDeConstruccion.agregarPieza(new Cilindro("Bronce", "Verde", 10, 100)); // superficie: 6911.50
-        this.reporteDeConstruccion.agregarPieza(new Esfera("Bronce", "Verde", 10)); // superficie: 1256.64
-        this.reporteDeConstruccion.agregarPieza(new PrismaRectangular("Bronce", "Verde", 20, 10, 5)); // superficie: 700
+        this.reporteDeConstruccion.agregarPieza(new Cilindro("Hierro", "Rojo", 10, 100));
+        this.reporteDeConstruccion.agregarPieza(new Esfera("Hierro", "Rojo", 10));
+        this.reporteDeConstruccion.agregarPieza(new PrismaRectangular("Hierro", "Rojo", 20, 10, 5));
+        this.reporteDeConstruccion.agregarPieza(new Cilindro("Bronce", "Verde", 10, 100));
+        this.reporteDeConstruccion.agregarPieza(new Esfera("Bronce", "Verde", 10));
+        this.reporteDeConstruccion.agregarPieza(new PrismaRectangular("Bronce", "Verde", 20, 10, 5));
     }
 }
