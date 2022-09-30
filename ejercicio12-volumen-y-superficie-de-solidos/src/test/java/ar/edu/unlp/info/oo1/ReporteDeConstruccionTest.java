@@ -37,11 +37,12 @@ public class ReporteDeConstruccionTest {
     }
 
     private void agregarPiezas() {
-        this.reporteDeConstruccion.agregarPieza(new Cilindro("Hierro", "Rojo", 10, 100));
-        this.reporteDeConstruccion.agregarPieza(new Esfera("Hierro", "Rojo", 10));
-        this.reporteDeConstruccion.agregarPieza(new PrismaRectangular("Hierro", "Rojo", 20, 10, 5));
-        this.reporteDeConstruccion.agregarPieza(new Cilindro("Bronce", "Verde", 10, 100));
-        this.reporteDeConstruccion.agregarPieza(new Esfera("Bronce", "Verde", 10));
-        this.reporteDeConstruccion.agregarPieza(new PrismaRectangular("Bronce", "Verde", 20, 10, 5));
+        this.reporteDeConstruccion
+                .agregarPieza(new Cilindro("Hierro","Rojo",10,100))
+                .agregarPieza(new Esfera("Hierro", "Rojo", 10))
+                .agregarPieza(new PrismaRectangular("Hierro", "Rojo", 20, 10, 5))
+                .agregarPieza(new Cilindro("Bronce", "Verde", 10, 100))
+                .agregarPieza(new Esfera("Bronce", "Verde", 10))
+                .agregarPieza(new PrismaRectangular("Bronce", "Verde", 20, 10, 5));
     }
 }

@@ -4,17 +4,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 public class InversorTest {
 
     private Inversor inversor;
-    private final Helper helper = Helper.getInstance();
 
     @BeforeEach
     public void setUp() {
         this.inversor =
                 new Inversor("Jesus")
                 .agregarInversion(new InversionEnAcciones("Meta", 10, 300))
-                .agregarInversion(new PlazoFijo(this.helper.getMonto(), this.helper.getPorcentaje(), this.helper.getFecha()));
+                .agregarInversion(new PlazoFijo(100, 1, LocalDate.of(2022, 9, 26)));
     }
 
     @Test
@@ -24,7 +25,7 @@ public class InversorTest {
 
     @Test
     public void testValorActual() {
-        assertEquals(this.calcularTotal(), this.inversor.valorActual());
+        assertEquals(3104, this.inversor.valorActual());
     }
 
     @Test
@@ -32,9 +33,5 @@ public class InversorTest {
         this.inversor.eliminarInversiones();
         assertEquals(0, this.inversor.getCantidadDeInversiones());
         assertEquals(0, this.inversor.valorActual());
-    }
-
-    private double calcularTotal() {
-        return (10 * 300) + this.helper.calcularTotal();
     }
 }

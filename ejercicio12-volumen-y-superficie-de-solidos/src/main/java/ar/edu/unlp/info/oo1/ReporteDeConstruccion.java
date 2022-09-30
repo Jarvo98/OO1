@@ -27,7 +27,8 @@ public class ReporteDeConstruccion {
                 .sum();
     }
 
-    public void agregarPieza(Pieza pieza) {
+    public ReporteDeConstruccion agregarPieza(Pieza pieza) {
         this.piezas.add(pieza);
+        return this;
     }
 }

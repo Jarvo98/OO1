@@ -14,11 +14,11 @@ public abstract class Pieza {
 
     public abstract double getSuperficie();
 
-    public boolean esDeEsteMaterial(String material) { // Preguntar si deberia testear este metodo?
+    public boolean esDeEsteMaterial(String material) {
         return this.material.equals(material);
     }
 
-    public boolean esDeEsteColor(String color) { // Preguntar si deberia testear este metodo?
+    public boolean esDeEsteColor(String color) {
         return this.color.equals(color);
     }
 }
