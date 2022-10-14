@@ -1,29 +1,23 @@
-package ar.edu.unlp.info.oo1.second;
-
-import ar.edu.unlp.info.oo1.IDateLapse;
+package ar.edu.unlp.info.oo1;
 
 import java.time.LocalDate;
 
-public class DateLapse implements IDateLapse {
+public class DateLapse {
 
     private LocalDate from;
-    private int sizeInDays;
+    private LocalDate to;
 
-    public DateLapse(LocalDate from, int sizeInDays) {
+    public DateLapse(LocalDate from, LocalDate to) {
         this.from = from;
-        this.sizeInDays = sizeInDays;
+        this.to = to;
     }
 
     private LocalDate getFrom() {
         return this.from;
     }
 
-    private int getSizeInDays() {
-        return this.sizeInDays;
-    }
-
     private LocalDate getTo() {
-        return this.getFrom().plusDays(this.getSizeInDays());
+        return this.to;
     }
 
     public int sizeInDays() {

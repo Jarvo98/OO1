@@ -14,11 +14,11 @@ public class DateLapse implements IDateLapse {
         this.to = to;
     }
 
-    public LocalDate getFrom() {
+    private LocalDate getFrom() {
         return this.from;
     }
 
-    public LocalDate getTo() {
+    private LocalDate getTo() {
         return this.to;
     }
 
