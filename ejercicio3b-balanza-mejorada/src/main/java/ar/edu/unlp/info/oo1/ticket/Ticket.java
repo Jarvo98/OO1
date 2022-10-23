@@ -34,7 +34,7 @@ public class Ticket {
         return this
                 .getProductos()
                 .stream()
-                .mapToDouble(producto -> producto.getPeso())
+                .mapToDouble(Producto::getPeso)
                 .sum();
     }
 
@@ -42,7 +42,7 @@ public class Ticket {
         return this
                 .getProductos()
                 .stream()
-                .mapToDouble(producto -> producto.getPrecio())
+                .mapToDouble(Producto::getPrecio)
                 .sum();
     }
 

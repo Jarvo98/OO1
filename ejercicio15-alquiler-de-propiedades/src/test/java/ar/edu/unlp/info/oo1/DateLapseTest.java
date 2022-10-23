@@ -1,15 +1,14 @@
 package ar.edu.unlp.info.oo1;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class DateLapseTest {
-
     private DateLapse dateLapse;
 
     @BeforeEach
@@ -30,6 +29,20 @@ public class DateLapseTest {
     @Test
     public void includesDateTestWithDateOutOfRange() {
         assertFalse(this.dateLapse.includesDate(LocalDate.of(2022, 10, 30)));
+    }
+
+    @Test
+    public void overlapsTestWithOverlappingDate() {
+        assertTrue(this.dateLapse.overlaps(
+                new DateLapse(LocalDate.of(2022, 10, 4), LocalDate.of(2022, 10, 11))));
+    }
+
+    @Test
+    public void overlapsTestWithNonOverlappingDate() {
+        assertFalse(this.dateLapse.overlaps(
+                new DateLapse(LocalDate.of(2022, 10, 7), LocalDate.of(2022, 10, 11))));
+        assertFalse(this.dateLapse.overlaps(
+                new DateLapse(LocalDate.of(2022, 9, 21), LocalDate.of(2022, 9, 28))));
     }
 
     @Test

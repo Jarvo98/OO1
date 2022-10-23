@@ -28,4 +28,9 @@ public class DateLapse {
         return this.getFrom().equals(date) || this.getTo().equals(date)
                 || (this.getFrom().isBefore(date) && this.getTo().isAfter(date));
     }
+
+    public boolean overlaps(DateLapse dateLapse) {
+        return this.includesDate(dateLapse.getFrom()) || this.includesDate(dateLapse.getTo());
+    }
+
 }

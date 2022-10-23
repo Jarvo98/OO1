@@ -27,7 +27,7 @@ public class Balanza {
         return this
                 .getProductos()
                 .stream()
-                .mapToDouble(producto -> producto.getPrecio())
+                .mapToDouble(Producto::getPrecio)
                 .sum();
     }
 
@@ -35,7 +35,7 @@ public class Balanza {
         return this
                 .getProductos()
                 .stream()
-                .mapToDouble(producto -> producto.getPeso())
+                .mapToDouble(Producto::getPeso)
                 .sum();
     }
 
