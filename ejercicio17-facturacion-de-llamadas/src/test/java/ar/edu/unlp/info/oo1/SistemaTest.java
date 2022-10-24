@@ -27,7 +27,7 @@ public class SistemaTest {
         this.sistema.registrarLlamadaInterurbana(LocalDateTime.of(2022, 2, 15, 12, 10, 10), 3, 11111111, 22222222, 50);
         Factura factura = this.sistema.facturarACliente(this.personaFisica, LocalDate.of(2022, 1, 1), LocalDate.of(2022, 2, 28));
 
-        assertEquals(20, factura.getMontoTotal());
+        assertEquals(19.8, factura.getMontoTotal());
     }
 
     @Test
@@ -40,11 +40,11 @@ public class SistemaTest {
     @Test
     public void facturarAClienteTestConFacturasEnExtremos() {
         this.sistema.registrarLlamadaLocal(LocalDateTime.of(2022, 1, 1, 0, 0, 1), 11, 11111111, 22222222);
-        this.sistema.registrarLlamadaInterurbana(LocalDateTime.of(2022, 2, 28, 23, 59, 59), 3, 11111111, 2222222);
+        this.sistema.registrarLlamadaInterurbana(LocalDateTime.of(2022, 2, 28, 23, 59, 59), 3, 11111111, 2222222, 50);
         this.sistema.registrarLlamadaLocal(LocalDateTime.of(2021, 12, 31, 23, 59, 59), 11, 11111111, 22222222);
         this.sistema.registrarLlamadaInterurbana(LocalDateTime.of(2022, 3, 1, 0, 0, 1), 3, 11111111, 22222222, 50);
         Factura factura = this.sistema.facturarACliente(this.personaFisica, LocalDate.of(2022, 1, 1), LocalDate.of(2022, 2, 28));
 
-        assertEquals(20, factura.getMontoTotal());
+        assertEquals(19.8, factura.getMontoTotal());
     }
 }

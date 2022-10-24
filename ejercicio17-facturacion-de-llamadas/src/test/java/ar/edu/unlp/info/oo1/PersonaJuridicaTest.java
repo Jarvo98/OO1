@@ -2,6 +2,7 @@ package ar.edu.unlp.info.oo1;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ public class PersonaJuridicaTest {
 
     @BeforeEach
     public void setUp() {
-        this.personaJuridica = new PersonaJuridica("Jesus", "Calle 10", 11111111, 20959295604, "Sociedad Anonima");
+        this.personaJuridica = new PersonaJuridica("Jesus", "Calle 10", 11111111, 20959295604l, "Sociedad Anonima");
     }
 
     @Test
